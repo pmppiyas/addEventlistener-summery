@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS DOM SUMMERY</title>
+</head>
+
+<body>
+  <h1>Final DOM EVENT Handkers</h1>
+  <h3 id="handler-status">Default Text</h3>
+  <p id="p-tag">Default Input Text</p>
+  <input type="text" id="input">
+  <button id="btn-update">Update</button>
+  <br>
+  <br>
+  <button onclick="handleStatus()">Handle Event by Add onclick Function.</button>
+  <button id="event-listener">handle event by addEventListener</button>
+  <script>
+    //Rules Number 01, we Use
+    function handleStatus() {
+      const handlerStatus = document.getElementById('handler-status');
+      handlerStatus.innerText = 'Handled by function attached on onclick.'
+    }
+    //Rules Number 02, we Use
+    document.getElementById('event-listener').addEventListener('click', function () {
+      const handlerStatus = document.getElementById('handler-status');
+      handlerStatus.innerText = 'Text updated by addEventListener button.'
+    })
+
+    //Rules Number 02 Again
+    document.getElementById('btn-update').addEventListener('click', function () {
+      const inputField = document.getElementById('input');
+      const inputText = inputField.value;
+      const pTag = document.getElementById('p-tag')
+      pTag.innerText = inputText;
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary</title>
+</head>
+
+<body>
+  <!--1 (Add Eventhandeler)Background Change By 2 type-->
+  <h1>Explore DOM Events</h1>
+
+  <h2>Background Change by 2 type</h2>
+  <button id="make-green">Make green</button>
+  <button onclick="makeYellow()">Make yellow</button>
+  <br>
+  <div id="email-box">
+    <h2>Add email</h2>
+    <input type="email" id="user-email">
+    <button id="email-btn">Sent</button>
+    <h3 id="no-email">No Email is here</h3>
+    <ul id="email-list"></ul>
+  </div>
+  <!--1(Add Eventhandeler) Background Change By 2 type-->
+  <script>
+    // option 1-----
+    document.getElementById('make-green').addEventListener('click', function () {
+      document.body.style.backgroundColor = 'green';
+    })
+    // option 2-----
+    function makeYellow() {
+      document.body.style.backgroundColor = 'yellow';
+    }
+  </script>
+
+  <!--  -->
+  <script>
+    // document.getElementById('user-email').addEventListener('keyup', function (event) {
+    //   console.log(event.target.value);
+    // })
+    document.getElementById('email-btn').addEventListener('click', function () {
+      const email = document.getElementById('user-email');
+      const emailInput = email.value;
+      const emailContainer = document.getElementById('email-box');
+      document.getElementById('no-email').innerText = 'Your Favorite Email bellow(click one to delate)'
+      const ul = document.getElementById('email-list');
+      const li = document.createElement('li');
+      li.innerText = emailInput;
+      ul.appendChild(li);
+      email.value = "";
+
+      ul.addEventListener('click', function (event) {
+        event.target.parentNode.removeChild(event.target);
+      })
+    })
+
+  </script>
+</body>
+
+</html>

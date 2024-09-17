@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub</title>
+</head>
+
+<body>
+  <h1 id="secret-info">My Secret info</h1>
+  <input type="text" id="delate-confrim" placeholder="plaese type delate">
+  <br>
+  <button id="dlt-btn" disabled>Delate</button>
+  <script>
+    document.getElementById('delate-confrim').addEventListener('keyup', function () {
+      const text = event.target.value;
+      const delateButton = document.getElementById('dlt-btn');
+      if (text === 'delate') {
+        delateButton.removeAttribute('disabled');
+      }
+      else {
+        delateButton.setAttribute('disabled', true);
+      }
+    })
+    document.getElementById('dlt-btn').addEventListener('click', function () {
+      const secret = document.getElementById('secret-info');
+      secret.style.display = 'none';
+    })
+  </script>
+</body>
+
+</html>

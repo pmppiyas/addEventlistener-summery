@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change by Input</title>
+</head>
+
+<body>
+  <p id="text-display">Default Text Here</p>
+  <input type="text" id="my-input">
+  <br>
+  <button id="btn-update">Update</button>
+  <script>
+    document.getElementById('btn-update').addEventListener('click', function () {
+      const inputField = document.getElementById('my-input');
+      const inputText = inputField.value;
+      const displayText = document.getElementById('text-display');
+      displayText.innerText = inputText;
+    })
+  </script>
+</body>
+
+</html>
